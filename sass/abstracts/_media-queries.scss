@@ -1,0 +1,42 @@
+@use './functions' as *;
+@use './variables' as *;
+@use './colors' as *;
+@use './mixins' as *;
+
+$breakpoint-xl: 1200px;
+$breakpoint-lg: 992px;
+$breakpoint-md: 768px;
+$breakpoint-sm: 576px;
+$breakpoint-xs: 480px;
+
+@mixin media_query($breakpoint) {
+  @if $breakpoint =='xl' {
+    @media (max-width: $breakpoint-xl) {
+      @content;
+    }
+  }
+
+  @else if $breakpoint =='lg' {
+    @media (max-width: $breakpoint-lg) {
+      @content;
+    }
+  }
+
+  @else if $breakpoint =='md' {
+    @media (max-width: $breakpoint-md) {
+      @content;
+    }
+  }
+
+  @else if $breakpoint =='sm' {
+    @media (max-width: $breakpoint-sm) {
+      @content;
+    }
+  }
+
+  @else if $breakpoint =='xs' {
+    @media (max-width: $breakpoint-xs) {
+      @content;
+    }
+  }
+}

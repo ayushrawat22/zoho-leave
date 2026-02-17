@@ -1,0 +1,33 @@
+@use '../abstracts/functions' as *;
+@use '../abstracts/variables' as *;
+@use '../abstracts/colors' as *;
+@use '../abstracts/media-queries' as *;
+@use '../abstracts/mixins' as *;
+
+
+.cards {
+    background-color: $bg-light;
+    padding: px_to_rem(32px) 0 px_to_rem(60px);
+    width: 100%;
+
+    &__wrapper {
+        max-width: 90%;
+        margin: 0 auto;
+        display: flex;
+        gap: px_to_rem(24px);
+        flex-wrap: wrap;
+        justify-content: flex-start;
+
+        &--myday {
+            @include card-layout;
+        }
+
+        &--compOff {
+            @include card-layout;
+        }
+
+        &--pto {
+            @include card-layout;
+        }
+    }
+}

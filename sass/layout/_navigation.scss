@@ -1,0 +1,122 @@
+@use '../abstracts/functions' as *;
+@use '../abstracts/variables' as *;
+@use '../abstracts/colors' as *;
+@use '../abstracts/media-queries' as *;
+
+.nav {
+  background-color: $navy-blue;
+  color: $white;
+  padding-bottom: px_to_rem(8px);
+  width: 100%;
+
+  &__wrapper {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    height: px_to_rem(50px);
+    margin: 0 auto;
+    max-width: 90%;
+
+
+    &--left {
+      align-items: center;
+      display: flex;
+
+      &-list {
+        align-items: center;
+        display: flex;
+        gap: 2rem;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+
+        &-item {
+          position: relative;
+
+          &--active {
+            color: $white;
+            display: block;
+            font-size: 1rem;
+            font-family: $font-main;
+            font-weight: 500;
+            padding: 1.5rem 0;
+            position: relative;
+            text-decoration: none;
+
+            &:hover {
+              color: $white;
+            }
+          }
+        }
+      }
+    }
+
+    &--right {
+      align-items: center;
+      display: flex;
+      gap: 1.5rem;
+
+      &-plus {
+        align-items: center;
+        background-color: $light-blue;
+        border-radius: 0.5rem;
+        cursor: pointer;
+        display: flex;
+        height: 2.5rem;
+        justify-content: center;
+        width: 2.5rem;
+
+        &-btn {
+          background-color: transparent;
+          border-radius: 0;
+          filter: brightness(0) invert(1);
+          height: 1.2rem;
+          width: 1.2rem;
+
+
+        }
+      }
+
+
+      &-search,
+      &-notification {
+        cursor: pointer;
+        filter: brightness(0) invert(1);
+        height: 1.5rem;
+        width: 1.5rem;
+      }
+
+      &-profile {
+        border-radius: 50%;
+        cursor: pointer;
+        height: 2.5rem;
+        object-fit: cover;
+        width: 2.5rem;
+      }
+    }
+  }
+}
+
+.subNav__list {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  gap: px_to_rem(24px);
+  list-style: none;
+  margin: 0 auto;
+  max-width: 90%;
+  height: px_to_rem(40px);
+  padding: px_to_rem(16px) 0;
+
+  &--item {
+    cursor: pointer;
+    font-family: $font-main;
+    font-size: px_to_rem(14px);
+    font-weight: 500;
+    color: $mid-gray;
+
+    &:hover {
+      color: $dark;
+    }
+  }
+}

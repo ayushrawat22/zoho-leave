@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/dist/css/main.css" />
+  </head>
+  <body>
+    <header>
+      <nav class="nav">
+        <div class="nav__wrapper">
+          <div class="nav__wrapper--left">
+            <ul class="nav__wrapper--left-list">
+              <li class="nav__wrapper--left-list-item"><a class="nav__wrapper--left-list-item--active" href="#">My Space</a></li>
+              <li class="nav__wrapper--left-list-item"><a class="nav__wrapper--left-list-item--active" href="#">Team</a></li>
+              <li class="nav__wrapper--left-list-item"><a class="nav__wrapper--left-list-item--active" href="#">Organization</a></li>
+            </ul>
+          </div>
+
+          <div class="nav__wrapper--right">
+            <div class="nav__wrapper--right-plus">
+              <img class="nav__wrapper--right-plus-btn" src="./media/nav/plus.svg" alt="plus icon">
+            </div>
+            <img class="nav__wrapper--right-search" src="./media/nav/search.svg" alt="search icon">
+            <img class="nav__wrapper--right-notification" src="./media/nav/notification-bell-svgrepo-com.svg" alt="notification icon">
+            <img class="nav__wrapper--right-profile" src="./media/nav/ayush.png" alt="user icon">
+          </div>
+        </div>
+      </nav>
+
+      <section>
+        <div>
+          <ul class="subNav__list">
+            <li class="subNav__list--item">Leave Summary</li>
+            <li class="subNav__list--item">Leave Balance</li>
+            <li class="subNav__list--item">Leave Requests</li>
+            <li class="subNav__list--item">Compensatory Request</li>
+            <li class="subNav__list--item">Leave Grant</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="leave">
+        <div class="leave__wrapper">
+          <div class="leave__wrapper--top">
+            <div class="leave__wrapper--top-left">
+              <p class="leave__wrapper--top-left-booked">Leave booked this year: <span class="leave__wrapper--top-left-booked-number">0</span></p>
+              <p class="leave__wrapper--top-left-absent">Absent: <span class="leave__wrapper--top-left-absent-number">0</span></p>
+            </div>
+
+            <div class="leave__wrapper--top-mid"><img class="leave__wrapper--top-mid-img" src="./media/nav/calendar-svgrepo-com.svg" alt="calendar icon">
+              <p class="leave__wrapper--top-mid-text">1-Jan-2026 - 31-Dec-2026</p>
+            </div>
+
+            <div class="leave__wrapper--top-right">
+              <img class="leave__wrapper--top-right-list" src="./media/nav/list-svgrepo-com.svg" alt="list icon">
+              <img class="leave__wrapper--top-right-calendar" src="./media/nav/calendar-svgrepo-com.svg" alt="calendar icon">
+              <button class="leave__wrapper--top-right-btn">Apply Leave</button>
+              <img class="leave__wrapper--top-right-dotmenu" src="./media/nav/dot-menu-more-2-svgrepo-com.svg" alt="dot menu icon">
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="cards">
+        <div class="cards__wrapper">
+          <!-- my day -->
+          <div class="cards__wrapper--myday">
+          <div class="cards__wrapper--myday-heading">
+            <p class="cards__wrapper--myday-heading-text">My Day</p>
+          </div>
+          <div class="cards__wrapper--myday-logo">
+            <img class="cards__wrapper--myday-logo-img" src="./media/cards/holiday.svg" alt="holiday icon">
+          </div>
+          <div class="cards__wrapper--myday-available">
+            <p class="cards__wrapper--myday-available-text">Available</p>
+            <p class="cards__wrapper--myday-available-number"></p>
+          </div>
+          <div class="cards__wrapper--myday-used">
+            <p class="cards__wrapper--myday-used-text">Booked</p>
+            <p class="cards__wrapper--myday-used-number"></p>
+          </div>
+        </div>
+        <!-- compensatory off -->
+
+          <div class="cards__wrapper--compOff">
+          <div class="cards__wrapper--compOff-heading">
+            <p class="cards__wrapper--compOff-heading-text">Compensatory Off</p>
+          </div>
+          <div class="cards__wrapper--compOff-logo">
+            <img class="cards__wrapper--compOff-logo-img" src="./media/cards/cmp.png" alt="holiday icon">
+          </div>
+          <div class="cards__wrapper--compOff-available">
+            <p class="cards__wrapper--compOff-available-text">Available</p>
+            <p class="cards__wrapper--compOff-available-number"></p>
+          </div>
+          <div class="cards__wrapper--compOff-used">
+            <p class="cards__wrapper--compOff-used-text">Booked</p>
+            <p class="cards__wrapper--compOff-used-number"></p>
+          </div>
+        </div>
+        <!-- personal time off -->
+
+          <div class="cards__wrapper--pto">
+          <div class="cards__wrapper--pto-heading">
+            <p class="cards__wrapper--pto-heading-text">Personal Time Off</p>
+          </div>
+          <div class="cards__wrapper--pto-logo">
+            <img class="cards__wrapper--pto-logo-img" src="./media/cards/holiday.svg" alt="holiday icon">
+          </div>
+          <div class="cards__wrapper--pto-available">
+            <p class="cards__wrapper--pto-available-text">Available: </p>
+            <p class="cards__wrapper--pto-available-number"></p>
+          </div>
+          <div class="cards__wrapper--pto-used">
+            <p class="cards__wrapper--pto-used-text">Booked: </p>
+            <p class="cards__wrapper--pto-used-number"></p>
+          </div>
+        </div>
+        </div>
+      </section>
+
+      <section class="upcoming">
+        <div class="upcoming__wrapper">
+          <div class="upcoming__dropdown">
+            <select class="upcoming__select">
+              <option value="both">Upcoming Leaves & Holidays</option>
+              <option value="leaves">Upcoming Leaves</option>
+              <option value="holidays">Upcoming Holidays</option>
+            </select>
+          </div>
+          <div class="upcoming__content">
+            <!-- js will add soon -->
+          </div>
+        </div>
+      </section>
+
+      <section class="past">
+        <div class="past__wrapper">
+          <div class="past__dropdown">
+            <select class="past__select">
+              <option value="both">Past Leaves & Holidays</option>
+              <option value="leaves">Past Leaves</option>
+              <option value="holidays">Past Holidays</option>
+            </select>
+          </div>
+
+          <div class="past__content">
+            <!-- js will add soon -->
+          </div>
+        </div>
+      </section>
+
+    </header>
+    <script src="script.js"></script>
+  </body>
+  </html>

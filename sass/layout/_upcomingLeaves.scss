@@ -1,0 +1,129 @@
+@use '../abstracts/functions' as *;
+@use '../abstracts/variables' as *;
+@use '../abstracts/colors' as *;
+@use '../abstracts/media-queries' as *;
+
+.upcoming {
+    background-color: $bg-light;
+    padding: px_to_rem(12px) 0;
+    font-family: $font-main;
+
+    &__wrapper {
+        max-width: 90%;
+        margin: 0 auto;
+    }
+
+    &__dropdown {
+        position: relative;
+        display: inline-block;
+        margin-bottom: px_to_rem(16px);
+    }
+
+    &__select {
+        appearance: none;
+        background-color: $white;
+        border: 1px solid $border-light;
+        border-radius: 4px;
+        padding: px_to_rem(8px) px_to_rem(36px) px_to_rem(8px) px_to_rem(12px);
+        font-size: px_to_rem(14px);
+        color: $dark;
+        font-family: $font-main;
+        cursor: pointer;
+        transition: all 0.2s ease;
+
+        &:focus {
+            outline: none;
+            border-color: $active-blue;
+        }
+    }
+
+    &__dropdown::after {
+        content: "\2304"; //found out these unicodes online for drop down icons
+        font-size: 16px;
+        color: $light-gray;
+        position: absolute;
+        right: 12px;
+        top: 45%;
+        transform: translateY(-50%);
+        pointer-events: none;
+    }
+
+    &__content {
+        width: 100%;
+    }
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        max-height: px_to_rem(320px);
+        overflow-y: auto;
+        background-color: $white;
+        border: 1px solid $border-light;
+        border-radius: 8px;
+        box-shadow: $shadow-light;
+
+        &::-webkit-scrollbar {
+            width: 4px;
+        }
+
+        &::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background: $border-light;
+            border-radius: 10px;
+        }
+    }
+
+    &__item {
+        display: flex;
+        align-items: center;
+        padding: px_to_rem(16px) px_to_rem(20px);
+        border-bottom: 1px solid rgba($border-light, 0.5);
+        transition: background-color 0.2s ease;
+
+        &:last-child {
+            border-bottom: none;
+        }
+
+        &-date {
+            flex: 0 0 35%;
+            font-size: px_to_rem(14px);
+            color: $dark;
+            font-weight: 500;
+        }
+
+        &-info {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            gap: px_to_rem(12px);
+            border-left: 1px solid rgba($border-light, 0.3);
+            padding-left: px_to_rem(20px);
+        }
+
+        &-icon {
+            width: px_to_rem(18px);
+            height: px_to_rem(18px);
+            object-fit: contain;
+            opacity: 0.7;
+        }
+
+        &-name {
+            font-size: px_to_rem(14px);
+            font-weight: 500;
+            color: $dark;
+        }
+    }
+
+    &__no-data {
+        background-color: $white;
+        border: 1px solid $border-light;
+        border-radius: 8px;
+        color: $light-gray;
+        font-size: px_to_rem(14px);
+        text-align: center;
+        padding: px_to_rem(40px) 0;
+    }
+}
