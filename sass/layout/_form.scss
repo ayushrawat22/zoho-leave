@@ -16,11 +16,11 @@
     align-items: center;
     justify-content: center;
     background: rgba(0, 0, 0, 0.4);
-    padding: 20px;
+    padding: px_to_rem(20px);
     z-index: 1100;
 
     @include media_query('sm') {
-      padding: 10px;
+      padding: px_to_rem(10px);
     }
 
     &.open {
@@ -41,8 +41,8 @@
 
     &--form {
       background: $white;
-      border-radius: 6px;
-      border: 1px solid $gray-200;
+      border-radius: px_to_rem(6px);
+      border: px_to_rem(1px) solid $gray-200;
       box-shadow: $shadow-sm;
       overflow: hidden;
       width: 100%;
@@ -64,15 +64,15 @@
 
     &--field {
       display: flex;
-      gap: 20px;
+      gap: px_to_rem(20px);
       align-items: flex-start;
-      padding: 18px 28px;
-      border-bottom: 1px solid $gray-50;
+      padding: px_to_rem(18px) px_to_rem(28px);
+      border-bottom: px_to_rem(1px) solid $gray-50;
 
       @include media_query('md') {
         flex-direction: column;
         gap: 8px;
-        padding: 16px 20px;
+        padding: px_to_rem(16px) px_to_rem(20px);
       }
 
       &:last-of-type {
@@ -81,9 +81,9 @@
     }
 
     &--label {
-      width: 220px;
+      width: px_to_rem(220px);
       color: $gray-500;
-      font-size: 14px;
+      font-size: px_to_rem(14px);
       line-height: 1.4;
       padding-top: 6px;
 
@@ -95,11 +95,11 @@
 
     &--input {
       flex: 1;
-      padding: 10px 12px;
-      border-radius: 6px;
-      border: 1px solid $gray-200;
+      padding: px_to_rem(10px) px_to_rem(12px);
+      border-radius: px_to_rem(6px);
+      border: px_to_rem(1px) solid $gray-200;
       background: $white;
-      font-size: 14px;
+      font-size: px_to_rem(14px);
       color: $gray-800;
       box-shadow: none;
       font-family: inherit;
@@ -111,7 +111,7 @@
 
       &#start-date,
       &#end-date {
-        max-width: 260px;
+        max-width: px_to_rem(260px);
 
         @include media_query('md') {
           max-width: 100%;
@@ -119,32 +119,32 @@
       }
 
       &#reason {
-        min-height: 120px;
+        min-height: px_to_rem(120px);
         resize: vertical;
       }
     }
 
     &--footer {
       display: flex;
-      gap: 10px;
+      gap: px_to_rem(10px);
       align-items: center;
-      padding: 18px 28px;
+      padding: px_to_rem(18px) px_to_rem(28px);
       background: $white;
-      border-top: 1px solid $gray-200;
+      border-top: px_to_rem(1px) solid $gray-200;
       justify-content: flex-start;
 
       @include media_query('md') {
-        padding: 16px 20px;
+        padding: px_to_rem(16px) px_to_rem(20px);
         justify-content: flex-end;
       }
     }
 
     &--button {
-      padding: 8px 14px;
-      border-radius: 6px;
-      font-size: 14px;
+      padding: px_to_rem(8px) px_to_rem(14px);
+      border-radius: px_to_rem(6px);
+      font-size: px_to_rem(14px);
       cursor: pointer;
-      min-width: 100px;
+      min-width: px_to_rem(100px);
 
       @include media_query('sm') {
         flex: 1;
@@ -154,13 +154,13 @@
       &-primary {
         background: $blue-300;
         color: $white;
-        border: 1px solid $blue-300;
+        border: px_to_rem(1px) solid $blue-300;
       }
 
       &-secondary {
         background: $white;
         color: $gray-800;
-        border: 1px solid $gray-200;
+        border: px_to_rem(1px) solid $gray-200;
       }
     }
   }
@@ -168,18 +168,18 @@
   &__submit-feedback,
   &__submit-warning {
     position: fixed;
-    right: 20px;
-    top: 22px;
-    padding: 8px 12px;
-    border-radius: 6px;
+    right: px_to_rem(20px);
+    top: px_to_rem(22px);
+    padding: px_to_rem(8px) px_to_rem(12px);
+    border-radius: px_to_rem(6px);
     box-shadow: $shadow-sm;
     z-index: 1200;
-    font-size: 13px;
+    font-size: px_to_rem(13px);
 
     @include media_query('sm') {
-      right: 10px;
-      left: 10px;
-      top: 10px;
+      right: px_to_rem(10px);
+      left: px_to_rem(10px);
+      top: px_to_rem(10px);
       text-align: center;
     }
   }

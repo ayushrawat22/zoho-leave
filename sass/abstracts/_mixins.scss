@@ -18,8 +18,8 @@
 
 @mixin card-layout {
   background-color: $white;
-  border-radius: 12px;
-  border: 1px solid $gray-200;
+  border-radius: px_to_rem(12px);
+  border: px_to_rem(1px) solid $gray-200;
   padding: px_to_rem(24px);
   width: 100%;
   max-width: px_to_rem(300px);
@@ -44,7 +44,7 @@
 
   &-logo {
     background-color: rgba($blue-100, 0.15);
-    border-radius: 12px;
+    border-radius: px_to_rem(12px);
     width: px_to_rem(64px);
     height: px_to_rem(64px);
     display: flex;
@@ -69,7 +69,7 @@
   }
 
   &-available {
-    border-top: 1px solid $gray-100;
+    border-top: px_to_rem(1px) solid $gray-100;
     margin-top: px_to_rem(8px);
 
     &-text {

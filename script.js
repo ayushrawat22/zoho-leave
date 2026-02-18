@@ -1,4 +1,4 @@
-// --- CLEAR LOCAL STORAGE FOR FRESH START ---
+//CLEAR LOCAL STORAGE FOR FRESH START
 // localStorage.removeItem('bookedLeaves');
 // localStorage.removeItem('leaveBalances');
 
@@ -27,14 +27,13 @@ const upcomingHolidays = [
   { date: "31-Dec-2026, Thursday", name: "Winter Break - 2026-2027", type: "Holiday" }
 ];
 
-// --- Load Data from LocalStorage ---
+//Load Data from LocalStorag3
 const savedLeaves = JSON.parse(localStorage.getItem('bookedLeaves')) || [];
 const allEvents = [...upcomingHolidays, ...savedLeaves];
 
 const defaultBalances = { 'MyDay': 1, 'Compensatory Leave (CL)': 2, 'Personal Time Off (PTO)': 24 };
 const savedBalances = JSON.parse(localStorage.getItem('leaveBalances')) || defaultBalances;
 
-// --- Select Elements ---
 const upcomingContent = document.querySelector(".upcoming__content");
 const upcomingSelect = document.querySelector(".upcoming__select");
 const pastContent = document.querySelector(".past__content");
@@ -48,15 +47,11 @@ const endInput = document.getElementById('end-date');
 const leaveTypeEl = document.getElementById('leave-type');
 const reasonEl = document.getElementById('reason');
 const halfDayCheckbox = document.getElementById('half-day');
-
-// Balance Elements
 const balances = {
   'MyDay': document.getElementById('myday-balance'),
   'Compensatory Leave (CL)': document.getElementById('comp-balance'),
   'Personal Time Off (PTO)': document.getElementById('pto-balance')
 };
-
-// Booked Elements
 const myDayBookedEl = document.getElementById('myday-booked');
 const compBookedEl = document.getElementById('comp-booked');
 const ptoBookedEl = document.getElementById('pto-booked');
@@ -281,7 +276,7 @@ if (startInput) {
     const day = d.getDate();
     const month = d.getMonth() + 1;
     const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-    // Format the search string to match the holiday list 04-Mar
+    // Format the search string to match the holiday list 04-Mar found out you have to use this format to match the holiday list
     const search = `${String(day).padStart(2, '0')}-${monthNames[month - 1]}`;
     return upcomingHolidays.some(h => h.date.startsWith(search));
   };

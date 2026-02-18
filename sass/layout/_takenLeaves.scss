@@ -27,11 +27,11 @@
         }
 
         &::after {
-            content: "\2304";
-            font-size: 16px;
+            content: "\2304"; ///found this unicode for ^ upside down
+            font-size: px_to_rem(16px);
             color: $gray-500;
             position: absolute;
-            right: 12px;
+            right: px_to_rem(12px);
             top: 45%;
             transform: translateY(-50%);
             pointer-events: none;
@@ -41,8 +41,8 @@
     &__select {
         appearance: none;
         background-color: $white;
-        border: 1px solid $gray-200;
-        border-radius: 4px;
+        border: px_to_rem(1px) solid $gray-200;
+        border-radius: px_to_rem(4px);
         padding: px_to_rem(8px) px_to_rem(36px) px_to_rem(8px) px_to_rem(12px);
         font-size: px_to_rem(14px);
         color: $gray-900;
@@ -70,12 +70,12 @@
         max-height: px_to_rem(320px);
         overflow-y: auto;
         background-color: $white;
-        border: 1px solid $gray-200;
+        border: px_to_rem(1px) solid $gray-200;
         border-radius: 8px;
         box-shadow: $shadow-sm;
 
         &::-webkit-scrollbar {
-            width: 4px;
+            width: px_to_rem(4px);
         }
 
         &::-webkit-scrollbar-track {
@@ -84,7 +84,7 @@
 
         &::-webkit-scrollbar-thumb {
             background: $gray-200;
-            border-radius: 10px;
+            border-radius: px_to_rem(10px);
         }
     }
 
@@ -92,7 +92,7 @@
         display: flex;
         align-items: center;
         padding: px_to_rem(16px) px_to_rem(20px);
-        border-bottom: 1px solid rgba($gray-200, 0.5);
+        border-bottom: px_to_rem(1px) solid rgba($gray-200, 0.5);
         transition: background-color 0.2s ease;
 
         @include media_query('sm') {
@@ -127,7 +127,7 @@
             display: flex;
             align-items: center;
             gap: px_to_rem(12px);
-            border-left: 1px solid rgba($gray-200, 0.3);
+            border-left: px_to_rem(1px) solid rgba($gray-200, 0.3);
             padding-left: px_to_rem(20px);
 
             @include media_query('sm') {
@@ -153,7 +153,7 @@
 
     &__no-data {
         background-color: $white;
-        border: 1px solid $gray-200;
+        border: px_to_rem(1px) solid $gray-200;
         border-radius: 8px;
         color: $gray-500;
         font-size: px_to_rem(14px);

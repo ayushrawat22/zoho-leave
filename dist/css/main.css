@@ -208,7 +208,7 @@ a:hover {
 .leave {
   background-color: #f0f2f5;
   padding: 0.75rem 0;
-  border-bottom: 1px solid #ffffff;
+  border-bottom: 0.0625rem solid #ffffff;
 }
 .leave__wrapper--top {
   display: flex;
@@ -284,8 +284,8 @@ a:hover {
 .leave__wrapper--top-mid::before {
   content: "‹";
   background-color: #ffffff;
-  border: 1px solid #dddddd;
-  border-radius: 4px;
+  border: 0.0625rem solid #dddddd;
+  border-radius: 0.25rem;
   height: 2rem;
   width: 1.5rem;
   display: flex;
@@ -293,14 +293,14 @@ a:hover {
   justify-content: center;
   color: #3B82F6;
   cursor: pointer;
-  font-size: 18px;
+  font-size: 1.125rem;
   font-weight: bold;
 }
 .leave__wrapper--top-mid::after {
   content: "›";
   background-color: #ffffff;
-  border: 1px solid #dddddd;
-  border-radius: 4px;
+  border: 0.0625rem solid #dddddd;
+  border-radius: 0.25rem;
   height: 2rem;
   width: 1.5rem;
   display: flex;
@@ -308,7 +308,7 @@ a:hover {
   justify-content: center;
   color: #3B82F6;
   cursor: pointer;
-  font-size: 18px;
+  font-size: 1.125rem;
   font-weight: bold;
   order: 2;
 }
@@ -316,9 +316,9 @@ a:hover {
   height: 2rem;
   width: 2rem;
   background-color: #ffffff;
-  border: 1px solid #dddddd;
+  border: 0.0625rem solid #dddddd;
   padding: 0.375rem;
-  border-radius: 4px;
+  border-radius: 0.25rem;
   -o-object-fit: contain;
      object-fit: contain;
   order: 1;
@@ -347,8 +347,8 @@ a:hover {
   height: 2rem;
   width: 2rem;
   background-color: #ffffff;
-  border: 1px solid #dddddd;
-  border-radius: 4px;
+  border: 0.0625rem solid #dddddd;
+  border-radius: 0.25rem;
   padding: 0.5rem;
   cursor: pointer;
   -o-object-fit: contain;
@@ -363,7 +363,7 @@ a:hover {
   color: #ffffff;
   border: none;
   padding: 0.5rem 1.125rem;
-  border-radius: 4px;
+  border-radius: 0.25rem;
   font-weight: 500;
   cursor: pointer;
   font-size: 0.8125rem;
@@ -412,8 +412,8 @@ a:hover {
      -moz-appearance: none;
           appearance: none;
   background-color: #ffffff;
-  border: 1px solid #dddddd;
-  border-radius: 4px;
+  border: 0.0625rem solid #dddddd;
+  border-radius: 0.25rem;
   padding: 0.5rem 2.25rem 0.5rem 0.75rem;
   font-size: 0.875rem;
   color: #212529;
@@ -432,10 +432,10 @@ a:hover {
 }
 .upcoming__dropdown::after {
   content: "⌄";
-  font-size: 16px;
+  font-size: 1rem;
   color: #727b7c;
   position: absolute;
-  right: 12px;
+  right: 0.75rem;
   top: 45%;
   transform: translateY(-50%);
   pointer-events: none;
@@ -449,25 +449,25 @@ a:hover {
   max-height: 20rem;
   overflow-y: auto;
   background-color: #ffffff;
-  border: 1px solid #dddddd;
+  border: 0.0625rem solid #dddddd;
   border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.05);
 }
 .upcoming__list::-webkit-scrollbar {
-  width: 4px;
+  width: 0.25rem;
 }
 .upcoming__list::-webkit-scrollbar-track {
   background: transparent;
 }
 .upcoming__list::-webkit-scrollbar-thumb {
   background: #dddddd;
-  border-radius: 10px;
+  border-radius: 0.625rem;
 }
 .upcoming__item {
   display: flex;
   align-items: center;
   padding: 1rem 1.25rem;
-  border-bottom: 1px solid rgba(221, 221, 221, 0.5);
+  border-bottom: 0.0625rem solid rgba(221, 221, 221, 0.5);
   transition: background-color 0.2s ease;
 }
 @media (max-width: 576px) {
@@ -498,7 +498,7 @@ a:hover {
   display: flex;
   align-items: center;
   gap: 0.75rem;
-  border-left: 1px solid rgba(221, 221, 221, 0.3);
+  border-left: 0.0625rem solid rgba(221, 221, 221, 0.3);
   padding-left: 1.25rem;
 }
 @media (max-width: 576px) {
@@ -522,7 +522,7 @@ a:hover {
 }
 .upcoming__no-data {
   background-color: #ffffff;
-  border: 1px solid #dddddd;
+  border: 0.0625rem solid #dddddd;
   border-radius: 8px;
   color: #727b7c;
   font-size: 0.875rem;
@@ -556,10 +556,10 @@ a:hover {
 }
 .past__dropdown::after {
   content: "⌄";
-  font-size: 16px;
+  font-size: 1rem;
   color: #727b7c;
   position: absolute;
-  right: 12px;
+  right: 0.75rem;
   top: 45%;
   transform: translateY(-50%);
   pointer-events: none;
@@ -569,8 +569,8 @@ a:hover {
      -moz-appearance: none;
           appearance: none;
   background-color: #ffffff;
-  border: 1px solid #dddddd;
-  border-radius: 4px;
+  border: 0.0625rem solid #dddddd;
+  border-radius: 0.25rem;
   padding: 0.5rem 2.25rem 0.5rem 0.75rem;
   font-size: 0.875rem;
   color: #212529;
@@ -596,25 +596,25 @@ a:hover {
   max-height: 20rem;
   overflow-y: auto;
   background-color: #ffffff;
-  border: 1px solid #dddddd;
+  border: 0.0625rem solid #dddddd;
   border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.05);
 }
 .past__list::-webkit-scrollbar {
-  width: 4px;
+  width: 0.25rem;
 }
 .past__list::-webkit-scrollbar-track {
   background: transparent;
 }
 .past__list::-webkit-scrollbar-thumb {
   background: #dddddd;
-  border-radius: 10px;
+  border-radius: 0.625rem;
 }
 .past__item {
   display: flex;
   align-items: center;
   padding: 1rem 1.25rem;
-  border-bottom: 1px solid rgba(221, 221, 221, 0.5);
+  border-bottom: 0.0625rem solid rgba(221, 221, 221, 0.5);
   transition: background-color 0.2s ease;
 }
 @media (max-width: 576px) {
@@ -648,7 +648,7 @@ a:hover {
   display: flex;
   align-items: center;
   gap: 0.75rem;
-  border-left: 1px solid rgba(221, 221, 221, 0.3);
+  border-left: 0.0625rem solid rgba(221, 221, 221, 0.3);
   padding-left: 1.25rem;
 }
 @media (max-width: 576px) {
@@ -672,7 +672,7 @@ a:hover {
 }
 .past__no-data {
   background-color: #ffffff;
-  border: 1px solid #dddddd;
+  border: 0.0625rem solid #dddddd;
   border-radius: 8px;
   color: #727b7c;
   font-size: 0.875rem;
@@ -711,13 +711,13 @@ a:hover {
 }
 .cards__wrapper--myday, .cards__wrapper--compOff, .cards__wrapper--pto {
   background-color: #ffffff;
-  border-radius: 12px;
-  border: 1px solid #dddddd;
+  border-radius: 0.75rem;
+  border: 0.0625rem solid #dddddd;
   padding: 1.5rem;
   width: 100%;
   max-width: 18.75rem;
   font-family: "Roboto", sans-serif;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.05);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -735,7 +735,7 @@ a:hover {
 }
 .cards__wrapper--myday-logo, .cards__wrapper--compOff-logo, .cards__wrapper--pto-logo {
   background-color: rgba(85, 176, 255, 0.15);
-  border-radius: 12px;
+  border-radius: 0.75rem;
   width: 4rem;
   height: 4rem;
   display: flex;
@@ -757,7 +757,7 @@ a:hover {
   padding: 0.75rem 0;
 }
 .cards__wrapper--myday-available, .cards__wrapper--compOff-available, .cards__wrapper--pto-available {
-  border-top: 1px solid #f0f2f5;
+  border-top: 0.0625rem solid #f0f2f5;
   margin-top: 0.5rem;
 }
 .cards__wrapper--myday-available-text, .cards__wrapper--compOff-available-text, .cards__wrapper--pto-available-text {
@@ -807,12 +807,12 @@ a:hover {
   align-items: center;
   justify-content: center;
   background: rgba(0, 0, 0, 0.4);
-  padding: 20px;
+  padding: 1.25rem;
   z-index: 1100;
 }
 @media (max-width: 576px) {
   .leave__modal {
-    padding: 10px;
+    padding: 0.625rem;
   }
 }
 .leave__modal.open {
@@ -832,9 +832,9 @@ a:hover {
 }
 .leave__modal--form {
   background: #ffffff;
-  border-radius: 6px;
-  border: 1px solid #dddddd;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  border-radius: 0.375rem;
+  border: 0.0625rem solid #dddddd;
+  box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.05);
   overflow: hidden;
   width: 100%;
   height: 100%;
@@ -854,25 +854,25 @@ a:hover {
 }
 .leave__modal--field {
   display: flex;
-  gap: 20px;
+  gap: 1.25rem;
   align-items: flex-start;
-  padding: 18px 28px;
-  border-bottom: 1px solid #f0f4f8;
+  padding: 1.125rem 1.75rem;
+  border-bottom: 0.0625rem solid #f0f4f8;
 }
 @media (max-width: 768px) {
   .leave__modal--field {
     flex-direction: column;
     gap: 8px;
-    padding: 16px 20px;
+    padding: 1rem 1.25rem;
   }
 }
 .leave__modal--field:last-of-type {
   border-bottom: none;
 }
 .leave__modal--label {
-  width: 220px;
+  width: 13.75rem;
   color: #727b7c;
-  font-size: 14px;
+  font-size: 0.875rem;
   line-height: 1.4;
   padding-top: 6px;
 }
@@ -884,11 +884,11 @@ a:hover {
 }
 .leave__modal--input {
   flex: 1;
-  padding: 10px 12px;
-  border-radius: 6px;
-  border: 1px solid #dddddd;
+  padding: 0.625rem 0.75rem;
+  border-radius: 0.375rem;
+  border: 0.0625rem solid #dddddd;
   background: #ffffff;
-  font-size: 14px;
+  font-size: 0.875rem;
   color: #222222;
   box-shadow: none;
   font-family: inherit;
@@ -900,7 +900,7 @@ a:hover {
   }
 }
 .leave__modal--input#start-date, .leave__modal--input#end-date {
-  max-width: 260px;
+  max-width: 16.25rem;
 }
 @media (max-width: 768px) {
   .leave__modal--input#start-date, .leave__modal--input#end-date {
@@ -908,30 +908,30 @@ a:hover {
   }
 }
 .leave__modal--input#reason {
-  min-height: 120px;
+  min-height: 7.5rem;
   resize: vertical;
 }
 .leave__modal--footer {
   display: flex;
-  gap: 10px;
+  gap: 0.625rem;
   align-items: center;
-  padding: 18px 28px;
+  padding: 1.125rem 1.75rem;
   background: #ffffff;
-  border-top: 1px solid #dddddd;
+  border-top: 0.0625rem solid #dddddd;
   justify-content: flex-start;
 }
 @media (max-width: 768px) {
   .leave__modal--footer {
-    padding: 16px 20px;
+    padding: 1rem 1.25rem;
     justify-content: flex-end;
   }
 }
 .leave__modal--button {
-  padding: 8px 14px;
-  border-radius: 6px;
-  font-size: 14px;
+  padding: 0.5rem 0.875rem;
+  border-radius: 0.375rem;
+  font-size: 0.875rem;
   cursor: pointer;
-  min-width: 100px;
+  min-width: 6.25rem;
 }
 @media (max-width: 576px) {
   .leave__modal--button {
@@ -942,28 +942,28 @@ a:hover {
 .leave__modal--button-primary {
   background: #0081ff;
   color: #ffffff;
-  border: 1px solid #0081ff;
+  border: 0.0625rem solid #0081ff;
 }
 .leave__modal--button-secondary {
   background: #ffffff;
   color: #222222;
-  border: 1px solid #dddddd;
+  border: 0.0625rem solid #dddddd;
 }
 .leave__submit-feedback, .leave__submit-warning {
   position: fixed;
-  right: 20px;
-  top: 22px;
-  padding: 8px 12px;
-  border-radius: 6px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  right: 1.25rem;
+  top: 1.375rem;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.375rem;
+  box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.05);
   z-index: 1200;
-  font-size: 13px;
+  font-size: 0.8125rem;
 }
 @media (max-width: 576px) {
   .leave__submit-feedback, .leave__submit-warning {
-    right: 10px;
-    left: 10px;
-    top: 10px;
+    right: 0.625rem;
+    left: 0.625rem;
+    top: 0.625rem;
     text-align: center;
   }
 }
