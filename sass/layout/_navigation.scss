@@ -4,7 +4,7 @@
 @use '../abstracts/media-queries' as *;
 
 .nav {
-  background-color: $navy-blue;
+  background-color: $blue-500;
   color: $white;
   padding-bottom: px_to_rem(8px);
   width: 100%;
@@ -15,33 +15,61 @@
     justify-content: space-between;
     height: px_to_rem(50px);
     margin: 0 auto;
-    max-width: 90%;
+    max-width: 95%;
 
+    @include media_query('md') {
+      max-width: 92%;
+    }
 
     &--left {
       align-items: center;
       display: flex;
 
+      @include media_query('md') {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        flex: 1;
+        margin-right: px_to_rem(16px);
+
+        &::-webkit-scrollbar {
+          display: none;
+        }
+      }
+
       &-list {
         align-items: center;
         display: flex;
-        gap: 2rem;
+        gap: 2.5rem;
         list-style: none;
         margin: 0;
         padding: 0;
 
+        @include media_query('md') {
+          gap: 1.5rem;
+          padding-right: 1rem;
+        }
+
+        @include media_query('sm') {
+          gap: 1rem;
+        }
+
         &-item {
           position: relative;
+          white-space: nowrap;
 
           &--active {
             color: $white;
             display: block;
-            font-size: 1rem;
+            font-size: 0.95rem;
             font-family: $font-main;
             font-weight: 500;
             padding: 1.5rem 0;
             position: relative;
             text-decoration: none;
+
+            @include media_query('sm') {
+              font-size: 0.85rem;
+            }
 
             &:hover {
               color: $white;
@@ -56,42 +84,68 @@
       display: flex;
       gap: 1.5rem;
 
+      @include media_query('md') {
+        gap: 1rem;
+      }
+
+      @include media_query('sm') {
+        gap: 0.75rem;
+      }
+
       &-plus {
         align-items: center;
-        background-color: $light-blue;
+        background-color: $blue-100;
         border-radius: 0.5rem;
         cursor: pointer;
         display: flex;
-        height: 2.5rem;
+        height: 2.2rem;
         justify-content: center;
-        width: 2.5rem;
+        width: 2.2rem;
+
+        @include media_query('sm') {
+          height: 1.8rem;
+          width: 1.8rem;
+          border-radius: 0.3rem;
+        }
 
         &-btn {
           background-color: transparent;
           border-radius: 0;
           filter: brightness(0) invert(1);
-          height: 1.2rem;
-          width: 1.2rem;
+          height: 1.1rem;
+          width: 1.1rem;
 
-
+          @include media_query('sm') {
+            height: 0.9rem;
+            width: 0.9rem;
+          }
         }
       }
-
 
       &-search,
       &-notification {
         cursor: pointer;
         filter: brightness(0) invert(1);
-        height: 1.5rem;
-        width: 1.5rem;
+        height: 1.35rem;
+        width: 1.35rem;
+
+        @include media_query('sm') {
+          height: 1.1rem;
+          width: 1.1rem;
+        }
       }
 
       &-profile {
         border-radius: 50%;
         cursor: pointer;
-        height: 2.5rem;
+        height: 2.2rem;
         object-fit: cover;
-        width: 2.5rem;
+        width: 2.2rem;
+
+        @include media_query('sm') {
+          height: 1.8rem;
+          width: 1.8rem;
+        }
       }
     }
   }
@@ -104,19 +158,36 @@
   gap: px_to_rem(24px);
   list-style: none;
   margin: 0 auto;
-  max-width: 90%;
+  max-width: 95%;
   height: px_to_rem(40px);
   padding: px_to_rem(16px) 0;
+
+  @include media_query('md') {
+    gap: px_to_rem(16px);
+    overflow-x: auto;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
 
   &--item {
     cursor: pointer;
     font-family: $font-main;
     font-size: px_to_rem(14px);
     font-weight: 500;
-    color: $mid-gray;
+    color: $gray-800;
+    flex-shrink: 0;
+    white-space: nowrap;
+
+    @include media_query('sm') {
+      font-size: px_to_rem(13px);
+    }
 
     &:hover {
-      color: $dark;
+      color: $gray-900;
     }
   }
 }

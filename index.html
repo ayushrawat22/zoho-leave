@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="icon" type="image/x-icon" href="./media/favicon.ico">
     <link rel="stylesheet" href="/dist/css/main.css" />
   </head>
   <body>
@@ -28,6 +29,8 @@
           </div>
         </div>
       </nav>
+      
+    </header>
 
       <section>
         <div>
@@ -45,8 +48,8 @@
         <div class="leave__wrapper">
           <div class="leave__wrapper--top">
             <div class="leave__wrapper--top-left">
-              <p class="leave__wrapper--top-left-booked">Leave booked this year: <span class="leave__wrapper--top-left-booked-number">0</span></p>
-              <p class="leave__wrapper--top-left-absent">Absent: <span class="leave__wrapper--top-left-absent-number">0</span></p>
+              <p class="leave__wrapper--top-left-booked">Leave booked this year: <span class="leave__wrapper--top-left-booked-number" id="total-booked">0</span></p>
+              <p class="leave__wrapper--top-left-absent">Absent: <span class="leave__wrapper--top-left-absent-number" id="total-absent">0</span></p>
             </div>
 
             <div class="leave__wrapper--top-mid"><img class="leave__wrapper--top-mid-img" src="./media/nav/calendar-svgrepo-com.svg" alt="calendar icon">
@@ -61,7 +64,81 @@
             </div>
           </div>
         </div>
+
+        <div class="leave__modal">
+          <div class="leave__modal--wrapper">
+            <form class="leave__modal--form">
+              <div class="leave__modal--content">
+                <div class="leave__modal--field">
+                  <label class="leave__modal--label" id="leave-type-label">Leave Type *</label>
+                  <select class="leave__modal--input" id="leave-type" required>
+                    <option value="">Select</option>
+                    <option value="Personal Time Off (PTO)">Personal Time Off (PTO)</option>
+                    <option value="Compensatory Leave (CL)">Compensatory Leave (CL)</option>
+                    <option value="MyDay">MyDay</option>
+                  </select>
+                </div>
+                <div class="leave__modal--field">
+                  <label class="leave__modal--label" id="start-date-label">Start Date *</label>
+                  <input type="date" class="leave__modal--input" id="start-date" required>
+                  <input type="hidden" id="start-year">
+                  <input type="hidden" id="start-month">
+                  <input type="hidden" id="start-day">
+                </div>
+
+                <!-- Half Day Checkbox -->
+                <div class="leave__modal--field">
+                  <label class="leave__modal--label">Half Day</label>
+                  <input type="checkbox" id="half-day">
+                </div>
+  
+                <div class="leave__modal--field">
+  
+                  <label class="leave__modal--label" id="end-date-label">End Date</label>
+  
+                  <input type="date" class="leave__modal--input" id="end-date">
+  
+                  <input type="hidden" id="end-year">
+                  <input type="hidden" id="end-month">
+                  <input type="hidden" id="end-day">
+  
+                </div>
+  
+                <div class="leave__modal--field">
+                  <label class="leave__modal--label">Reason *</label>
+                  <textarea
+                    class="leave__modal--input"
+                    id="reason"
+                    required
+                  ></textarea>
+                </div>
+              </div>
+
+              <!-- Buttons -->
+              <div class="leave__modal--footer">
+
+                <button
+                  type="submit"
+                  class="leave__modal--button leave__modal--button-primary"
+                >
+                  Submit
+                </button>
+
+                <button
+                  type="button"
+                  class="leave__modal--button leave__modal--button-secondary"
+                >
+                  Cancel
+                </button>
+
+              </div>
+
+            </form>
+            <iframe class="leave__iframe" name="hidden_iframe" ></iframe>
+          </div>
+        </div>
       </section>
+     
 
       <section class="cards">
         <div class="cards__wrapper">
@@ -75,11 +152,11 @@
           </div>
           <div class="cards__wrapper--myday-available">
             <p class="cards__wrapper--myday-available-text">Available</p>
-            <p class="cards__wrapper--myday-available-number"></p>
+            <p class="cards__wrapper--myday-available-number" id="myday-balance">1</p>
           </div>
           <div class="cards__wrapper--myday-used">
             <p class="cards__wrapper--myday-used-text">Booked</p>
-            <p class="cards__wrapper--myday-used-number"></p>
+            <p class="cards__wrapper--myday-used-number" id="myday-booked">0</p>
           </div>
         </div>
         <!-- compensatory off -->
@@ -93,11 +170,11 @@
           </div>
           <div class="cards__wrapper--compOff-available">
             <p class="cards__wrapper--compOff-available-text">Available</p>
-            <p class="cards__wrapper--compOff-available-number"></p>
+            <p class="cards__wrapper--compOff-available-number" id="comp-balance">2</p>
           </div>
           <div class="cards__wrapper--compOff-used">
             <p class="cards__wrapper--compOff-used-text">Booked</p>
-            <p class="cards__wrapper--compOff-used-number"></p>
+            <p class="cards__wrapper--compOff-used-number" id="comp-booked">0</p>
           </div>
         </div>
         <!-- personal time off -->
@@ -111,11 +188,11 @@
           </div>
           <div class="cards__wrapper--pto-available">
             <p class="cards__wrapper--pto-available-text">Available: </p>
-            <p class="cards__wrapper--pto-available-number"></p>
+            <p class="cards__wrapper--pto-available-number" id="pto-balance">24</p>
           </div>
           <div class="cards__wrapper--pto-used">
             <p class="cards__wrapper--pto-used-text">Booked: </p>
-            <p class="cards__wrapper--pto-used-number"></p>
+            <p class="cards__wrapper--pto-used-number" id="pto-booked">0</p>
           </div>
         </div>
         </div>
@@ -124,7 +201,7 @@
       <section class="upcoming">
         <div class="upcoming__wrapper">
           <div class="upcoming__dropdown">
-            <select class="upcoming__select">
+            <select class="upcoming__select" id="upcoming-filter">
               <option value="both">Upcoming Leaves & Holidays</option>
               <option value="leaves">Upcoming Leaves</option>
               <option value="holidays">Upcoming Holidays</option>
@@ -152,7 +229,6 @@
         </div>
       </section>
 
-    </header>
     <script src="script.js"></script>
   </body>
   </html>

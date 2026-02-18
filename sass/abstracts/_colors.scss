@@ -1,15 +1,26 @@
 $white: #ffffff;
-$dark: #212529;
-$navy-blue: #2e3b61;
-$light-blue: #55b0ff;
-$active-blue: #3B82F6;
-$light-gray: #727b7c;
-$mid-gray: #222222;
-$bg-light: #f0f2f5;
-$border-light: #dddddd;
-$button-blue: #0081ff;
-$hover-blue: #0076e6;
-$bg-hover: #f0f4f8;
-$separator-gray: #cccccc;
+$black: #212529;
+
+// Grays
+$gray-50: #f0f4f8;
+$gray-100: #f0f2f5;
+$gray-200: #dddddd;
+$gray-300: #cccccc;
+$gray-400: #999999;
+$gray-500: #727b7c;
+$gray-800: #222222;
+$gray-900: #212529;
+
+// Blues
+$blue-100: #55b0ff;
+$blue-200: #3B82F6;
+$blue-300: #0081ff;
+$blue-400: #0076e6;
+$blue-500: #2e3b61; // Navy
+
+// Status Colors
 $green: #10b981;
-$shadow-light: 0 4px 12px rgba(0, 0, 0, 0.05);
+$red: #d9534f;
+
+// Shadows
+$shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.05);

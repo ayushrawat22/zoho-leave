@@ -4,54 +4,160 @@
 @use '../abstracts/media-queries' as *;
 
 .past {
-    background-color: $bg-light;
-    padding: px_to_rem(12px) 0 px_to_rem(40px);
+    background-color: $gray-100;
+    padding: px_to_rem(12px) 0;
+    font-family: $font-main;
 
     &__wrapper {
-        max-width: 90%;
+        max-width: 95%;
         margin: 0 auto;
+
+        @include media_query('sm') {
+            max-width: 92%;
+        }
     }
 
     &__dropdown {
         position: relative;
         display: inline-block;
         margin-bottom: px_to_rem(16px);
+
+        @include media_query('sm') {
+            width: 100%;
+        }
+
+        &::after {
+            content: "\2304";
+            font-size: 16px;
+            color: $gray-500;
+            position: absolute;
+            right: 12px;
+            top: 45%;
+            transform: translateY(-50%);
+            pointer-events: none;
+        }
     }
 
     &__select {
         appearance: none;
         background-color: $white;
-        border: 1px solid #e1e4e8;
+        border: 1px solid $gray-200;
         border-radius: 4px;
         padding: px_to_rem(8px) px_to_rem(36px) px_to_rem(8px) px_to_rem(12px);
         font-size: px_to_rem(14px);
-        color: #444;
+        color: $gray-900;
         font-family: $font-main;
         cursor: pointer;
         transition: all 0.2s ease;
 
-        &:hover {
-            border-color: #cbd3da;
+        @include media_query('sm') {
+            width: 100%;
         }
 
         &:focus {
             outline: none;
-            border-color: $active-blue;
+            border-color: $blue-200;
         }
     }
 
-    &__dropdown::after {
-        content: "\2304";
-        font-size: 16px;
-        color: #888;
-        position: absolute;
-        right: 12px;
-        top: 45%;
-        transform: translateY(-50%);
-        pointer-events: none;
+    &__content {
+        width: 100%;
     }
 
-    &__content {
-        min-height: 20px;
+    &__list {
+        display: flex;
+        flex-direction: column;
+        max-height: px_to_rem(320px);
+        overflow-y: auto;
+        background-color: $white;
+        border: 1px solid $gray-200;
+        border-radius: 8px;
+        box-shadow: $shadow-sm;
+
+        &::-webkit-scrollbar {
+            width: 4px;
+        }
+
+        &::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background: $gray-200;
+            border-radius: 10px;
+        }
+    }
+
+    &__item {
+        display: flex;
+        align-items: center;
+        padding: px_to_rem(16px) px_to_rem(20px);
+        border-bottom: 1px solid rgba($gray-200, 0.5);
+        transition: background-color 0.2s ease;
+
+        @include media_query('sm') {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: px_to_rem(8px);
+            padding: px_to_rem(12px) px_to_rem(16px);
+        }
+
+        &:last-child {
+            border-bottom: none;
+        }
+
+        &:hover {
+            background-color: $gray-50;
+        }
+
+        &-date {
+            flex: 0 0 35%;
+            font-size: px_to_rem(14px);
+            color: $gray-500;
+            font-weight: 500;
+
+            @include media_query('sm') {
+                flex: 0 0 auto;
+                width: 100%;
+            }
+        }
+
+        &-info {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            gap: px_to_rem(12px);
+            border-left: 1px solid rgba($gray-200, 0.3);
+            padding-left: px_to_rem(20px);
+
+            @include media_query('sm') {
+                border-left: none;
+                padding-left: 0;
+                width: 100%;
+            }
+        }
+
+        &-icon {
+            width: px_to_rem(18px);
+            height: px_to_rem(18px);
+            object-fit: contain;
+            opacity: 0.5;
+        }
+
+        &-name {
+            font-size: px_to_rem(14px);
+            font-weight: 500;
+            color: $gray-800;
+        }
+    }
+
+    &__no-data {
+        background-color: $white;
+        border: 1px solid $gray-200;
+        border-radius: 8px;
+        color: $gray-500;
+        font-size: px_to_rem(14px);
+        text-align: center;
+        padding: px_to_rem(40px) 0;
     }
 }

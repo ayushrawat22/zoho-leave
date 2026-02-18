@@ -4,43 +4,55 @@
 @use '../abstracts/media-queries' as *;
 
 .upcoming {
-    background-color: $bg-light;
+    background-color: $gray-100;
     padding: px_to_rem(12px) 0;
     font-family: $font-main;
 
     &__wrapper {
-        max-width: 90%;
+        max-width: 95%;
         margin: 0 auto;
+
+        @include media_query('sm') {
+            max-width: 92%;
+        }
     }
 
     &__dropdown {
         position: relative;
         display: inline-block;
         margin-bottom: px_to_rem(16px);
+
+        @include media_query('sm') {
+            width: 100%;
+        }
     }
 
     &__select {
         appearance: none;
         background-color: $white;
-        border: 1px solid $border-light;
+        border: 1px solid $gray-200;
         border-radius: 4px;
         padding: px_to_rem(8px) px_to_rem(36px) px_to_rem(8px) px_to_rem(12px);
         font-size: px_to_rem(14px);
-        color: $dark;
+        color: $gray-900;
         font-family: $font-main;
         cursor: pointer;
         transition: all 0.2s ease;
 
+        @include media_query('sm') {
+            width: 100%;
+        }
+
         &:focus {
             outline: none;
-            border-color: $active-blue;
+            border-color: $blue-200;
         }
     }
 
     &__dropdown::after {
-        content: "\2304"; //found out these unicodes online for drop down icons
+        content: "\2304";
         font-size: 16px;
-        color: $light-gray;
+        color: $gray-500;
         position: absolute;
         right: 12px;
         top: 45%;
@@ -58,9 +70,9 @@
         max-height: px_to_rem(320px);
         overflow-y: auto;
         background-color: $white;
-        border: 1px solid $border-light;
+        border: 1px solid $gray-200;
         border-radius: 8px;
-        box-shadow: $shadow-light;
+        box-shadow: $shadow-sm;
 
         &::-webkit-scrollbar {
             width: 4px;
@@ -71,7 +83,7 @@
         }
 
         &::-webkit-scrollbar-thumb {
-            background: $border-light;
+            background: $gray-200;
             border-radius: 10px;
         }
     }
@@ -80,8 +92,15 @@
         display: flex;
         align-items: center;
         padding: px_to_rem(16px) px_to_rem(20px);
-        border-bottom: 1px solid rgba($border-light, 0.5);
+        border-bottom: 1px solid rgba($gray-200, 0.5);
         transition: background-color 0.2s ease;
+
+        @include media_query('sm') {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: px_to_rem(8px);
+            padding: px_to_rem(12px) px_to_rem(16px);
+        }
 
         &:last-child {
             border-bottom: none;
@@ -90,8 +109,13 @@
         &-date {
             flex: 0 0 35%;
             font-size: px_to_rem(14px);
-            color: $dark;
+            color: $gray-900;
             font-weight: 500;
+
+            @include media_query('sm') {
+                flex: 0 0 auto;
+                width: 100%;
+            }
         }
 
         &-info {
@@ -99,8 +123,14 @@
             display: flex;
             align-items: center;
             gap: px_to_rem(12px);
-            border-left: 1px solid rgba($border-light, 0.3);
+            border-left: 1px solid rgba($gray-200, 0.3);
             padding-left: px_to_rem(20px);
+
+            @include media_query('sm') {
+                border-left: none;
+                padding-left: 0;
+                width: 100%;
+            }
         }
 
         &-icon {
@@ -113,15 +143,15 @@
         &-name {
             font-size: px_to_rem(14px);
             font-weight: 500;
-            color: $dark;
+            color: $gray-900;
         }
     }
 
     &__no-data {
         background-color: $white;
-        border: 1px solid $border-light;
+        border: 1px solid $gray-200;
         border-radius: 8px;
-        color: $light-gray;
+        color: $gray-500;
         font-size: px_to_rem(14px);
         text-align: center;
         padding: px_to_rem(40px) 0;

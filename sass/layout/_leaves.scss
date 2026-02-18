@@ -4,7 +4,7 @@
 @use '../abstracts/media-queries' as *;
 
 .leave {
-    background-color: $bg-light;
+    background-color: $gray-100;
     padding: px_to_rem(12px) 0;
     border-bottom: 1px solid $white;
 
@@ -13,16 +13,35 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            max-width: 90%;
+            max-width: 95%;
             margin: 0 auto;
             font-family: $font-main;
+            flex-wrap: wrap;
+            gap: px_to_rem(16px);
+
+            @include media_query('lg') {
+                justify-content: center;
+                gap: px_to_rem(20px);
+            }
+
+            @include media_query('md') {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
 
             &-left {
                 display: flex;
                 align-items: center;
                 gap: px_to_rem(12px);
-                color: $mid-gray;
+                color: $gray-800;
                 font-size: px_to_rem(13px);
+
+                @include media_query('sm') {
+                    flex-direction: row;
+                    flex-wrap: wrap;
+                    justify-content: center;
+                }
 
                 &-booked {
                     margin: 0;
@@ -33,12 +52,16 @@
                     &::after {
                         content: "|";
                         margin-left: px_to_rem(12px);
-                        color: $separator-gray;
+                        color: $gray-300;
+
+                        @include media_query('xs') {
+                            display: none;
+                        }
                     }
 
                     &-number {
                         font-weight: 500;
-                        color: $dark;
+                        color: $gray-900;
                         margin-left: px_to_rem(4px);
                     }
                 }
@@ -48,7 +71,7 @@
 
                     &-number {
                         font-weight: 500;
-                        color: $dark;
+                        color: $gray-900;
                         margin-left: px_to_rem(4px);
                     }
                 }
@@ -60,32 +83,32 @@
                 gap: px_to_rem(8px);
 
                 &::before {
-                    content: "\2039"; //these are unicode chjaracters i found online for <>
+                    content: "\2039";
                     background-color: $white;
-                    border: 1px solid $border-light;
+                    border: 1px solid $gray-200;
                     border-radius: 4px;
                     height: px_to_rem(32px);
                     width: px_to_rem(24px);
                     display: flex;
                     align-items: center;
                     justify-content: center;
-                    color: $active-blue;
+                    color: $blue-200;
                     cursor: pointer;
                     font-size: 18px;
                     font-weight: bold;
                 }
 
                 &::after {
-                    content: "\203A"; //these are unicode chjaracters i found online for <>
+                    content: "\203A";
                     background-color: $white;
-                    border: 1px solid $border-light;
+                    border: 1px solid $gray-200;
                     border-radius: 4px;
                     height: px_to_rem(32px);
                     width: px_to_rem(24px);
                     display: flex;
                     align-items: center;
                     justify-content: center;
-                    color: $active-blue;
+                    color: $blue-200;
                     cursor: pointer;
                     font-size: 18px;
                     font-weight: bold;
@@ -96,7 +119,7 @@
                     height: px_to_rem(32px);
                     width: px_to_rem(32px);
                     background-color: $white;
-                    border: 1px solid $border-light;
+                    border: 1px solid $gray-200;
                     padding: px_to_rem(6px);
                     border-radius: 4px;
                     object-fit: contain;
@@ -105,7 +128,7 @@
 
                 &-text {
                     font-size: px_to_rem(14px);
-                    color: $dark;
+                    color: $gray-900;
                     font-weight: 500;
                     margin: 0;
                     order: 3;
@@ -118,13 +141,19 @@
                 align-items: center;
                 gap: px_to_rem(10px);
 
+                @include media_query('sm') {
+                    width: 100%;
+                    justify-content: center;
+                    gap: px_to_rem(8px);
+                }
+
                 &-list,
                 &-calendar,
                 &-dotmenu {
                     height: px_to_rem(32px);
                     width: px_to_rem(32px);
                     background-color: $white;
-                    border: 1px solid $border-light;
+                    border: 1px solid $gray-200;
                     border-radius: 4px;
                     padding: px_to_rem(8px);
                     cursor: pointer;
@@ -132,12 +161,12 @@
                     transition: background-color 0.2s;
 
                     &:hover {
-                        background-color: $bg-hover;
+                        background-color: $gray-50;
                     }
                 }
 
                 &-btn {
-                    background-color: $button-blue;
+                    background-color: $blue-300;
                     color: $white;
                     border: none;
                     padding: px_to_rem(8px) px_to_rem(18px);
@@ -150,8 +179,14 @@
                     display: flex;
                     align-items: center;
 
+                    @include media_query('sm') {
+                        flex: 1;
+                        max-width: px_to_rem(150px);
+                        justify-content: center;
+                    }
+
                     &:hover {
-                        background-color: $hover-blue;
+                        background-color: $blue-400;
                     }
                 }
             }

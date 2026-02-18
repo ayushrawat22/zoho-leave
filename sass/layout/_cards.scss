@@ -6,28 +6,40 @@
 
 
 .cards {
-    background-color: $bg-light;
-    padding: px_to_rem(32px) 0 px_to_rem(60px);
+    background-color: $gray-100;
+    padding: px_to_rem(32px) 0 px_to_rem(40px);
     width: 100%;
 
+    @include media_query('sm') {
+        padding: px_to_rem(24px) 0 px_to_rem(32px);
+    }
+
     &__wrapper {
-        max-width: 90%;
+        max-width: 95%;
         margin: 0 auto;
         display: flex;
         gap: px_to_rem(24px);
         flex-wrap: wrap;
         justify-content: flex-start;
 
-        &--myday {
-            @include card-layout;
+        @include media_query('lg') {
+            justify-content: center;
         }
 
-        &--compOff {
-            @include card-layout;
+        @include media_query('sm') {
+            gap: px_to_rem(16px);
+            max-width: 92%;
         }
 
+        &--myday,
+        &--compOff,
         &--pto {
             @include card-layout;
+
+            @include media_query('sm') {
+                max-width: 100%;
+                flex: 1 1 100%;
+            }
         }
     }
 }
