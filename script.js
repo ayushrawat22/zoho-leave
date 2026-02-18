@@ -466,10 +466,7 @@ if (form) {
       await fetch(googleForm.action, {
         method: 'POST',
         mode: 'no-cors',   //cors was cross origin resource sharing
-        body: params.toString(),
-        // headers: {
-        //   'Content-Type': 'application/x-www-form-urlencoded'
-        // }
+        body: params
       });
 
       // success
